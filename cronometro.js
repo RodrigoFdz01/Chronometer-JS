@@ -1,4 +1,4 @@
-let temporizador = document.getElementById("temporizador");
+let cronometro = document.getElementById("cronometro");
 let iniciar = document.getElementById("iniciarS");
 let resetear = document.getElementById("resetear");
 let grabar = document.getElementById("grabar");
@@ -20,7 +20,7 @@ function iniciarContador() {
   if (verificador == false) {
     intervalo = setInterval(function () {
       tiempo += 0.01;
-      temporizador.innerHTML = tiempo.toFixed(2);
+      cronometro.innerHTML = tiempo.toFixed(2);
     }, 10);
     verificador = true;
   } else {
@@ -32,7 +32,7 @@ function iniciarContador() {
 function resetearContador() {
   verificador = false;
   tiempo = 0;
-  temporizador.innerHTML = tiempo + ".00";
+  cronometro.innerHTML = tiempo + ".00";
   clearInterval(intervalo);
   while (almacenarTiempos.firstChild) {
     almacenarTiempos.removeChild(almacenarTiempos.firstChild);
@@ -40,7 +40,7 @@ function resetearContador() {
 }
 
 function grabarContador() {
-  if (temporizador.textContent === "0.00") {
+  if (cronometro.textContent === "0.00") {
     console.log("click en el botón iniciar");
   } else {
     let p = document.createElement("ul");
@@ -50,6 +50,8 @@ function grabarContador() {
     almacenarTiempos.appendChild(p);
   }
 }
+
+function temporizador() {}
 
 /*
 // function promiseSquare(val){
