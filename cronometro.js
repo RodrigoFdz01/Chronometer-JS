@@ -3,6 +3,9 @@ let iniciar = document.getElementById("iniciarS");
 let resetear = document.getElementById("resetear");
 let grabar = document.getElementById("grabar");
 let almacenarTiempos = document.getElementById("almacenarTiempos");
+let temporizador = document.getElementById("inputTemp");
+let inicioTemp = document.getElementById("inicioTemp");
+let temp = document.getElementById("temp");
 
 let tiempo = 0,
   intervalo = 0;
@@ -14,6 +17,7 @@ function init() {
   iniciar.addEventListener("click", iniciarContador);
   resetear.addEventListener("click", resetearContador);
   grabar.addEventListener("click", grabarContador);
+  inicioTemp.addEventListener("click", iniciartemp);
 }
 
 function iniciarContador() {
@@ -33,6 +37,7 @@ function resetearContador() {
   verificador = false;
   tiempo = 0;
   cronometro.innerHTML = tiempo + ".00";
+  //temporizador.value = "0";
   clearInterval(intervalo);
   while (almacenarTiempos.firstChild) {
     almacenarTiempos.removeChild(almacenarTiempos.firstChild);
@@ -51,7 +56,19 @@ function grabarContador() {
   }
 }
 
-function temporizador() {}
+function iniciartemp() {
+  let tempValue = temporizador.value;
+
+  if (tempValue > 0) {
+    intervalo = setInterval(function () {
+      if (tempValue == 0) {
+        clearInterval(intervalo);
+      }
+      tempValue -= 0.01;
+      temp.innerHTML = tempValue.toFixed(2);
+    }, 10);
+  }
+}
 
 /*
 // function promiseSquare(val){

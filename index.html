@@ -15,43 +15,36 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <div>
-            <h1>Cronómetro</h1>
-            <p
-              id="cronometro"
-              class="d-flex justify-content-center font-weight-bold"
-            >
-              0.00
-            </p>
-          </div>
-          <div
-            class="btn-group mb-2 d-flex justify-content-center"
-            role="group"
-          >
-            <button type="button" class="btn btn-success mr-2" id="iniciarS">
-              Iniciar/Stop
-            </button>
-            <button type="button" class="btn btn-danger mr-2" id="resetear">
-              Resetear
-            </button>
-            <button type="button" class="btn btn-info" id="grabar">
-              Grabar
-            </button>
-          </div>
-          <div>
-            <h5>Tiempos Grabados</h5>
-            <div id="almacenarTiempos"></div>
-          </div>
-          <div>
-            <input
-              type="text"
-              name=""
-              placeholder="Ingresa un numero..."
-              id="temporizador"
-            />
-          </div>
+      <div>
+        <div class="mb-4 mt-4 d-flex justify-content-around">
+          <h2>Cronómetro</h2>
+          <p id="cronometro" class="h3 d-flex align-items-center">0.00</p>
+        </div>
+      </div>
+      <div>
+        <div class="btn-group mb-4 d-flex justify-content-between" role="group">
+          <button type="button" class="btn btn-success mr-2" id="iniciarS">
+            Iniciar/Stop
+          </button>
+          <button type="button" class="btn btn-danger mr-2" id="resetear">
+            Resetear
+          </button>
+          <button type="button" class="btn btn-info" id="grabar">Grabar</button>
+        </div>
+      </div>
+      <div>
+        <h5>Tiempos Grabados</h5>
+        <div id="almacenarTiempos"></div>
+      </div>
+
+      <div class="mt-5">
+        <h2>Temporizador</h2>
+        <div class="d-flex justify-content-around">
+          <input type="number" id="inputTemp" class="h4 w-20" />
+          <p id="temp" class="h3">0.00</p>
+          <button type="button" class="btn btn-success mr-2" id="inicioTemp">
+            Iniciar/Stop
+          </button>
         </div>
       </div>
     </div>
@@ -59,5 +52,3 @@
     <script src="cronometro.js"></script>
   </body>
 </html>
-© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing
-API Training Blog About
